@@ -1,3 +1,16 @@
+/* Definição de variáveis para facilitar manutenções */
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #0056b3;
+    --cor-sucesso: #28a745;
+    --cor-sucesso-hover: #218838;
+    --cor-texto: #333;
+    --cor-fundo: #f0f2f5;
+    --cor-modal-fundo: #fefefe;
+    --cor-borda: #ccc;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
 /* Estilos gerais */
 * {
     box-sizing: border-box;
@@ -7,13 +20,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    color: #333;
+    color: var(--cor-texto);
     line-height: 1.5;
 }
 
@@ -21,7 +34,7 @@ body {
 .container {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px var(--cor-sombra);
     padding: 30px;
     width: 400px;
     max-width: 90%;
@@ -38,11 +51,11 @@ body {
 /* Título com animação */
 h1 {
     text-align: center;
-    color: #333;
+    color: var(--cor-texto);
     font-weight: 700;
     overflow: hidden;
     white-space: nowrap;
-    border-right: .15em solid #333;
+    border-right: .15em solid var(--cor-texto);
     margin: 0 auto;
     letter-spacing: .05em;
     min-height: 1.5em;
@@ -51,7 +64,7 @@ h1 {
 
 @keyframes blinking-cursor {
     from, to { border-color: transparent }
-    50% { border-color: #333 }
+    50% { border-color: var(--cor-texto) }
 }
 
 /* Grupos de input */
@@ -64,8 +77,8 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
-    padding: 16px 12px 12px; /* Aumentar o padding superior */
-    border: 1px solid #ccc;
+    padding: 16px 12px 12px;
+    border: 1px solid var(--cor-borda);
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
@@ -74,14 +87,14 @@ input[type="tel"] {
 }
 
 input:focus {
-    border-color: #007bff;
+    border-color: var(--cor-primaria);
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
 .input-group label {
     position: absolute;
-    top: 14px; /* Ajustar a posição do rótulo */
+    top: 14px;
     left: 12px;
     color: #777;
     pointer-events: none;
@@ -91,9 +104,9 @@ input:focus {
 
 input:focus + label,
 input.preenchido + label {
-    top: -8px; /* Posição do rótulo quando o campo está preenchido */
+    top: -8px;
     font-size: 0.8em;
-    color: #007bff;
+    color: var(--cor-primaria);
     background-color: #fff;
     padding: 2px 5px;
 }
@@ -116,11 +129,11 @@ input.preenchido + label {
 
 .password-toggle:focus {
     outline: none;
-    color: #007bff;
+    color: var(--cor-primaria);
 }
 
 .password-toggle:hover {
-    color: #0056b3;
+    color: var(--cor-secundaria);
 }
 
 /* Seção "Lembre-me" */
@@ -138,13 +151,13 @@ input.preenchido + label {
 }
 
 .remember-me label {
-    color: #333;
+    color: var(--cor-texto);
     cursor: pointer;
 }
 
 /* Botão ENTRAR */
 .entrar {
-    background-color: #28a745;
+    background-color: var(--cor-sucesso);
     color: white;
     padding: 14px 20px;
     border: none;
@@ -156,7 +169,7 @@ input.preenchido + label {
 }
 
 .entrar:hover {
-    background-color: #218838;
+    background-color: var(--cor-sucesso-hover);
     transform: translateY(-1px);
 }
 
@@ -179,14 +192,14 @@ input.preenchido + label {
 }
 
 .account-actions a {
-    color: #007bff;
+    color: var(--cor-primaria);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .account-actions a:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: var(--cor-secundaria);
 }
 
 .account-actions span {
@@ -196,7 +209,7 @@ input.preenchido + label {
 /* Link "Baixar App" */
 .baixar-app {
     text-align: center;
-    color: #007bff;
+    color: var(--cor-primaria);
     text-decoration: none;
     font-size: 14px;
     display: block;
@@ -210,7 +223,7 @@ input.preenchido + label {
 
 .baixar-app:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: var(--cor-secundaria);
 }
 
 /* Links de segurança */
@@ -230,7 +243,7 @@ input.preenchido + label {
 }
 
 .security-links a:hover {
-    color: #007bff;
+    color: var(--cor-primaria);
     text-decoration: underline;
 }
 
@@ -254,7 +267,7 @@ input.preenchido + label {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--cor-modal-fundo);
     padding: 20px;
     border: 1px solid #888;
     border-radius: 8px;
@@ -304,7 +317,7 @@ input.preenchido + label {
 
 .modal-title {
     margin-bottom: 15px;
-    color: #333;
+    color: var(--cor-texto);
     text-align: left;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
@@ -333,7 +346,7 @@ input.preenchido + label {
 }
 
 .ok-button {
-    background-color: #28a745;
+    background-color: var(--cor-sucesso);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -348,7 +361,7 @@ input.preenchido + label {
 }
 
 .ok-button:hover {
-    background-color: #218838;
+    background-color: var(--cor-sucesso-hover);
     transform: translateY(-1px);
 }
 
@@ -376,7 +389,7 @@ input.preenchido + label {
 a:focus,
 button:focus,
 input:focus {
-    outline: 2px solid #007bff;
+    outline: 2px solid var(--cor-primaria);
     outline-offset: 2px;
 }
 
@@ -437,7 +450,7 @@ input:focus {
     }
 }
 
-/* Estilos para ocultar labels visualmente mas manter para leitores de tela */
+/* Oculta visualmente labels mas mantém para leitores de tela */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -452,6 +465,6 @@ input:focus {
 
 /* Melhorias para usuários de teclado */
 :focus-visible {
-    outline: 3px solid #007bff;
+    outline: 3px solid var(--cor-primaria);
     outline-offset: 2px;
 }
