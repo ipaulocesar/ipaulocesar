@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Inicializa máscaras de input usando jQuery
+    // Inicializa máscaras de input usando jQuery e inputmask
     function initInputMasks() {
         if (typeof $ === 'function' && typeof $.fn.inputmask === 'function') {
             $('#new-phone').inputmask({
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         } else {
-            console.warn("jQuery ou plugin inputmask não está disponível");
+            console.warn("jQuery ou o plugin inputmask não está disponível");
         }
     }
 
