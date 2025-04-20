@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form class="login-box" aria-labelledby="login-heading">
+            <h1 id="login-heading"></h1>
+
+            <div class="input-group">
+                <input type="text" id="codigo" name="codigo" required>
+                <label for="codigo">Código</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="login" name="login" required>
+                <label for="login">Login</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="senha" name="senha" required>
+                <label for="senha">Senha</label>
+                <button type="button" class="password-toggle" id="togglePassword" aria-label="Mostrar ou esconder senha">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Lembre-me</label>
+            </div>
+
+            <button type="submit" class="entrar">ENTRAR</button>
+
+            <div class="account-actions">
+                <a href="#" id="create-account-link">Criar Conta</a>
+                <span>|</span>
+                <a href="#" id="recover-password-link">Recuperar Senha</a>
+            </div>
+
+            <a href="#" class="baixar-app"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Baixar App</a>
+
+            <div class="security-links">
+                <a href="#" id="privacy-link">Política de Privacidade</a>
+                <a href="#" id="terms-link">Termos de Uso</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal Política de Privacidade -->
+    <div id="privacy-modal" class="modal" role="dialog" aria-labelledby="privacy-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close-button" id="close-privacy-button" aria-label="Fechar">&times;</span>
+            <h2 class="modal-title" id="privacy-title">Política de Privacidade</h2>
+            <div class="modal-body">
+                <p>Esta é a Política de Privacidade do nosso serviço online. Levamos a sua privacidade a sério e estamos comprometidos em proteger as suas informações pessoais.</p>
+                <p><strong>Informações que coletamos:</strong> Podemos coletar informações como seu nome de usuário, endereço de e-mail e outras informações que você fornecer durante o uso do serviço.</p>
+                <p><strong>Como usamos suas informações:</strong> Usamos suas informações para fornecer e melhorar nossos serviços, personalizar sua experiência e nos comunicar com você.</p>
+                <p><strong>Compartilhamento de suas informações:</strong> Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário para fornecer nossos serviços ou conforme exigido por lei.</p>
+                <p><strong>Segurança de suas informações:</strong> Implementamos medidas de segurança razoáveis para proteger suas informações contra acesso não autorizado, uso, alteração ou destruição.</p>
+                <p><strong>Seus direitos:</strong> Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Entre em contato conosco se desejar exercer esses direitos.</p>
+                <p>Ao usar nosso serviço, você concorda com os termos desta Política de Privacidade. Podemos atualizar esta política periodicamente e notificaremos você sobre quaisquer alterações.</p>
+            </div>
+            <button class="ok-button" id="close-privacy-ok-button">OK</button>
+        </div>
+    </div>
+
+    <!-- Modal Termos de Uso -->
+    <div id="terms-modal" class="modal" role="dialog" aria-labelledby="terms-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close-button" id="close-terms-button" aria-label="Fechar">&times;</span>
+            <h2 class="modal-title" id="terms-title">Termos de Uso</h2>
+            <div class="modal-body">
+                <p>Estes são os Termos de Uso do nosso serviço online. Ao acessar ou usar nosso serviço, você concorda com estes termos.</p>
+                <p><strong>Uso do Serviço:</strong> Nosso serviço é fornecido para seu uso pessoal e não comercial. Você é responsável por garantir que seu uso do serviço esteja em conformidade com todas as leis e regulamentos aplicáveis.</p>
+                <p><strong>Sua Conta:</strong> Se você criar uma conta em nosso serviço, você é responsável por manter a confidencialidade de suas credenciais de login e por todas as atividades que ocorrerem em sua conta.</p>
+                <p><strong>Conteúdo do Usuário:</strong> Qualquer conteúdo que você enviar, publicar ou exibir em nosso serviço será de sua exclusiva responsabilidade. Você concede a nós uma licença não exclusiva, transferível, sublicenciável, isenta de royalties e mundial para usar, distribuir, modificar, executar, exibir e traduzir esse conteúdo em conexão com o fornecimento do nosso serviço.</p>
+                <p><strong>Propriedade Intelectual:</strong> Nosso serviço e seu conteúdo original (excluindo o conteúdo fornecido pelos usuários) são protegidos por direitos autorais, marcas registradas e outras leis de propriedade intelectual.</p>
+                <p><strong>Rescisão:</strong> Podemos rescindir ou suspender seu acesso ao nosso serviço a qualquer momento, sem aviso prévio ou responsabilidade, por qualquer motivo, incluindo, sem limitação, se você violar estes Termos de Uso.</p>
+                <p><strong>Isenção de Responsabilidade:</strong> Nosso serviço é fornecido "no estado em que se encontra" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas.</p>
+                <p><strong>Lei Aplicável:</strong> Estes Termos de Uso serão regidos e interpretados de acordo com as leis do Brasil, sem considerar suas disposições sobre conflitos de leis.</p>
+                <p>Ao continuar a usar nosso serviço, você concorda com estes Termos de Uso. Se você não concordar com estes termos, por favor, não acesse ou use nosso serviço.</p>
+            </div>
+            <button class="ok-button" id="close-terms-ok-button">OK</button>
+        </div>
+    </div>
+
+    <!-- Modal Criar Conta -->
+    <div id="create-account-modal" class="modal" role="dialog" aria-labelledby="create-account-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close-button" id="close-create-account-button" aria-label="Fechar">&times;</span>
+            <h2 class="modal-title" id="create-account-title">Criar Conta</h2>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="text" id="new-code" name="new-code" value="JD" readonly>
+                    <label for="new-code">Código</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="new-name" name="new-name" required>
+                    <label for="new-name">Nome</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="new-username" name="new-username" required>
+                    <label for="new-username">Login</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="new-password" name="new-password" required>
+                    <label for="new-password">Senha</label>
+                    <button type="button" class="password-toggle" id="toggleNewPassword" aria-label="Mostrar ou esconder senha">
+                        <i class="fas fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="new-email-register" name="new-email-register" required>
+                    <label for="new-email-register">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="new-phone" name="new-phone" aria-label="Número de telefone com DDD" placeholder="(DD) 9 0000-0000" required>
+                    <label for="new-phone">Número de Telefone</label>
+                </div>
+                <button class="ok-button" id="submit-create-account">Criar Conta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Recuperar Senha -->
+    <div id="recover-password-modal" class="modal" role="dialog" aria-labelledby="recover-password-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close-button" id="close-recover-password-button" aria-label="Fechar">&times;</span>
+            <h2 class="modal-title" id="recover-password-title">Recuperar Senha</h2>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input type="email" id="recover-email" name="recover-email" required>
+                    <label for="recover-email">Seu Email</label>
+                </div>
+                <button class="ok-button" id="send-recovery-link">Enviar Link de Recuperação</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Verificação de Código JD -->
+    <div id="jd-code-modal" class="modal" role="dialog" aria-labelledby="jd-code-title" aria-modal="true">
+        <div class="modal-content">
+            <span class="close-button" id="close-jd-code-button" aria-label="Fechar">&times;</span>
+            <h2 class="modal-title" id="jd-code-title">Verificação de Código</h2>
+            <div class="modal-body">
+                <p>Por favor, insira o código JD (case-insensitive):</p>
+                <div class="input-group">
+                    <input type="text" id="jd-verification-code" name="jd-verification-code" required>
+                    <label for="jd-verification-code">Código JD</label>
+                </div>
+                <button class="ok-button" id="verify-jd-code">Verificar</button>
+                <div id="jd-verification-message" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carregamento otimizado de scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
